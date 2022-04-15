@@ -1,11 +1,14 @@
 # Falcon-9-Predictive-Modeling
-This repository consists of a Python program to train and test machine learning algorithms to predict if a SpaceX Falcon 9 first stage booster will successfully land or not.
+This repository consists of a series of Jupyter notebooks to gather data from SpaceX API, format that data and use it to train and test machine learning algorithms to predict if a SpaceX Falcon 9 first stage booster will successfully land or not.
 
-After reading data into a pandas dataframe, it is standardized and split into training and testing sets. For each of the algorithms, cross-validation is performed using sklearn's GridSearchCV function to determine the best hyperparameters for the training set with that algorithm.
+### Notebook Progression:
+1. **falcon9_API_data.ipynb** - Makes request to spacexdata API, formats data and stores in **falcon9_data.csv**
 
-Once the parameters have been determined, the model is trained and then used to predict on the testing set. Finally, a confusion matrix is plotted to display prediction results.
+2. **falcon9_analysis_feature_engineering.ipynb** - Perform exploratory data analysis to determine important attributes, then feature engineering for one-hot encoding. Exports one-hot encoded data table to **falcon9_onehot.csv**
+3. **falcon9_predictive_modeling.ipynb** - Reads in .csv data, standardizes and splits data into training and testing sets. Four different machine learning algorithms are used; Cross-validation is performed to determine best hyperparameters for each algorithm, and models are trained and used to predict on testing set. Accuracy results are confusion matrices are then displayed. 
 
-Machine Learning Algorithms used:
+
+### Machine Learning Algorithms used:
 - Logistic Regression
 - Support Vector Machine
 - Decision Tree Classifier
